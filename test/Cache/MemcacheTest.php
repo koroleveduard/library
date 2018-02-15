@@ -30,4 +30,14 @@ class MemcacheTest extends TestCase
 
         $this->assertEquals($value, $this->instance->get($key));
     }
+
+    public function testDeleteItem()
+    {
+        $key = 'key';
+        $value = 100;
+
+        $this->instance->set($key, $value);
+        $this->instance->delete($key);
+        $this->assertFalse($this->instance->get($key));
+    }
 }

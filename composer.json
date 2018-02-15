@@ -1,0 +1,40 @@
+{
+  "name": "library",
+  "description": "library",
+  "type": "library",
+  "keywords": [
+    "cache, library"
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "php": "^7.1",
+    "zendframework/zend-stdlib": "~2.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0.8",
+    "zendframework/zend-coding-standard": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Library\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LibraryTest\\": "test"
+    }
+  },
+  "scripts": {
+    "check": [
+      "@cs-check",
+      "@test"
+    ],
+    "upload-coverage": "coveralls -v",
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": "phpunit --colors=always",
+    "test-coverage": "phpunit --coverage-clover clover.xml"
+  }
+}
